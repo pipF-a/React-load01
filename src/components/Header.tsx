@@ -18,7 +18,6 @@ export const Header = () => {
         <button onClick={() => setMenu(!menu)} className='md:hidden'>
           {menu ? <FaXmark /> : <FaBars />}
         </button>
-        
         <nav className={`${
             menu ? "block" : "hidden"
           } md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent`}>
@@ -30,7 +29,6 @@ export const Header = () => {
             ))}
           </ul>
         </nav>
-
       </div>
     </header>
   )

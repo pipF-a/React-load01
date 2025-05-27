@@ -21,7 +21,7 @@ export const Header = () => {
         <nav className={`${
             menu ? "block" : "hidden"
           } md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent`}>
-          <ul className='md:flex gap-4'>
+          <ul className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 p-4 md:p-0'>
             {navigationLinks.map((link)=>(
               <li>
                 <a href={link.href}>{link.name}</a>          

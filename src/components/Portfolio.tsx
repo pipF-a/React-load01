@@ -55,14 +55,14 @@ export const Portfolio = () => {
   }
   
   return (
-    <section className="py-24 bg-stone-50">
+    <section className="md:py-24 md:bg-stone-50 py-24 px-4">
       <div className="container mx-auto max-w-4xl space-y-8">
         <hgroup>
           <h2 className="text-5xl font-bold text-stone-800">Portfolio</h2>
           <p className="mt-8 text-stone-500 leading-relaxed text-xl">学習を通じて、実際に開発した成果物のリストです🤖</p>
         </hgroup>
-        <div className="flex gap-6">
-          <div className="flex flex-col gap-4 max-w-[282px] w-full">
+        <div className="md:flex md:gap-6">
+          <div className="flex flex-col gap-4 md:max-w-[282px] w-full">
             {tabItems.map((item,index)=> (
             <button
               key={index}
@@ -77,7 +77,7 @@ export const Portfolio = () => {
             ))}
           </div>
           {currentWorks.map((currentWork) => (
-            <div className="max-w-[584px] w-full col-span-2">
+            <div className="max-w-[584px] w-full col-span-2 md:mt-0 mt-4">
               <img src={currentWork.image} alt={currentWork.alt} className="rounded-t-xl border border-stone-400 border-b-0 h-[380px] w-full object-cover" />
               <div className="rounded-b-xl bg-white border-t-0 border-stone-400 border p-6 shadow-lg">
                 <p className="text-stone-600 mb-2">{currentWork.desc}</p>

@@ -1,55 +1,10 @@
 import { useState } from "react";
+import type { TabItemImage } from "../types/portfolio";
+import { tabItemImages,tabItems } from "../constants/portfolioData";
 
 export const Portfolio = () => {
 
-  interface TabItem  {
-    name:string;
-    icon:string;
-  }
-
-  interface tabItemImage  {
-    image:string;
-    alt:string;
-    desc:string;
-    link:string;
-  }
-
-
-  const tabItems:TabItem[] = [
-    {name:'ポートフォリオサイト',icon:'👋'},
-    {name:'名言ジェネレーター',icon:'💬'},
-    {name:'作業用メモアプリ',icon:'✏️'},
-    {name:'作業用メモアプリ',icon:'💰'},
-  ]
-
-  const tabItemImages:tabItemImage[] = [
-    {
-      image:'https://b13o.github.io/react-portfolio//react-portfolio.png',
-      alt: 'ポートフォリオサイト',
-      desc:'今表示しているこのサイト。シンプルな Web サイトを作成しながら、Reactの基本的な概念を学びました。',
-      link:'#',
-    },
-    {
-      image:'https://b13o.github.io/react-portfolio//random-quote.png',
-      alt: '名言ジェネレーター',
-      desc:'このプロジェクトでは、useEffect フックを使ったデータフェッチと、その注意点について重点的に学習しました。',
-      link:'#',
-    },
-    {
-      image:'https://b13o.github.io/react-portfolio//simple-memo.png',
-      alt: '作業用メモアプリ',
-      desc:'このプロジェクトでは、stateの配列やオブジェクトを、イミュータブルに扱うReactの作法を学習しました。',
-      link:'#',
-    },
-    {
-      image:'https://b13o.github.io/react-portfolio//warikan-culculator.png',
-      alt: '作業用メモアプリ',
-      desc:'このプロジェクトでは、Zustandを使用して、グローバルに状態を管理する実装を学習しました。',
-      link:'#',
-    },
-  ]
-
-  const [currentWorks,setCurrentWorks] = useState<tabItemImage[]>([tabItemImages[0]]);
+  const [currentWorks,setCurrentWorks] = useState<TabItemImage[]>([tabItemImages[0]]);
   const toggleCurrentWorks = (index: number) => {
     setCurrentWorks([tabItemImages[index]]);
   }
@@ -77,7 +32,7 @@ export const Portfolio = () => {
             ))}
           </div>
           {currentWorks.map((currentWork) => (
-            <div className="max-w-[584px] w-full col-span-2 md:mt-0 mt-4">
+            <div key={currentWork.image} className="max-w-[584px] w-full col-span-2 md:mt-0 mt-4">
               <img src={currentWork.image} alt={currentWork.alt} className="rounded-t-xl border border-stone-400 border-b-0 h-[380px] w-full object-cover" />
               <div className="rounded-b-xl bg-white border-t-0 border-stone-400 border p-6 shadow-lg">
                 <p className="text-stone-600 mb-2">{currentWork.desc}</p>

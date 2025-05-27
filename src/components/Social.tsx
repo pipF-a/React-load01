@@ -12,8 +12,10 @@ export const Social = () => {
         <h2 className="text-5xl font-bold text-stone-800 ">Social</h2>
         <p className="text-stone-500 leading-relaxed text-xl">私は、主に下記の媒体で、活動の記録を更新しています。<br/>そして、多くの開発者と繋がれることを、楽しみにしています🙌</p>
         <ul className="flex justify-center space-x-2 sm:space-x-8">
-          {socialIcons.map(icon =>(
-            <li className="flex items-center mx:p-12 p-4 sm:p-16 rounded-2xl border border-stone-200 hover:bg-stone-50 text-stone-600 hover:text-stone-900"><a href="">{icon}</a></li>
+          {socialIcons.map((icon, index) =>(
+            <li key={index} className="flex items-center mx:p-12 p-4 sm:p-16 rounded-2xl border border-stone-200 hover:bg-stone-50 text-stone-600 hover:text-stone-900">
+              <a href="/">{icon}</a>
+            </li>
           ))}
         </ul>
       </div>
